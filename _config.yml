@@ -7,3 +7,4 @@ paginate_path: "/page:num"
 
 plugins:
   - jemoji
+  - jekyll-paginate
