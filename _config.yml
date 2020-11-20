@@ -2,7 +2,8 @@
 title: MoonLightWatch's Blog
 timezone: Asia/Shanghai
 
-
+paginate: 10
+paginate_path: "/page:num"
 
 plugins:
   - jemoji

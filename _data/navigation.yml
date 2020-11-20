@@ -1,4 +1,8 @@
 - name: 主页
   link: /
+- name: 分类
+  link: /about.html
+- name: 标签
+  link: /tags
 - name: 关于
   link: /about.html

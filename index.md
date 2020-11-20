@@ -1,3 +1,37 @@
 ---
 layout: index
 ---
+
+
+
+
+
+
+
+***
+
+<div class="paginator">
+{% if paginator.previous_page%}
+
+<a href="{{ paginator.previous_page_path | '/' }}">上一页</a>
+
+{% endif %}
+
+{% for page in (1..paginator.total_pages) %}
+    {% if page == paginator.page %}
+      <a href="#">{{ page }}</a>
+    {% elsif page == 1 %}
+      <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
+    {% else %}
+      <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
+    {% endif %}
+  {% endfor %}
+
+{% if paginator.next_page %}
+
+<a href="{{ paginator.next_page_path }}">下一页</a>
+
+{% endif %}
+
+
+</div>
