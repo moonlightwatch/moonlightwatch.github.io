@@ -12,3 +12,28 @@ layout: page
     </ul>
     {% endfor %}
 </div>
+
+<table style="margin: auto; width: auto; text-align: left;">
+    <tbody>
+        {% for cate in site.categories %}
+        <tr>
+            <td>
+                <h2>{{ cate[0] }}</h2>
+            </td>
+        </tr>
+        {% for post in cate[1] %}
+        <tr>
+            <td>
+                <a href="{{ post.url }}">{{ post.title }}</a>
+            </td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td>
+                <hr>
+            </td>
+        </tr>
+        {% endfor %}
+
+    </tbody>
+</table>
