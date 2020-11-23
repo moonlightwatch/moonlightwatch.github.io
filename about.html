@@ -6,10 +6,10 @@ layout: page
     <tbody>
         <tr>
             <td>
-                <h1 class="about-tab" onclick="aboutMe_Clicked();">关于我</h1>
+                <h1 id="about-me-btn" class="about-tab" style="color: #40e0d0;" onclick="aboutMe_Clicked();">关于本人</h1>
             </td>
             <td>
-                <h1 class="about-tab" onclick="aboutSite_Clicked();">关于本站</h1>
+                <h1 id="about-site-btn" class="about-tab" onclick="aboutSite_Clicked();">关于本站</h1>
             </td>
         </tr>
     </tbody>
@@ -139,9 +139,13 @@ layout: page
     function aboutMe_Clicked() {
         document.getElementById("about-me").hidden = false;
         document.getElementById("about-site").hidden = true;
+        document.getElementById("about-me-btn").style = "color: #40e0d0;";
+        document.getElementById("about-site-btn").style = "color: #ffffff;";
     }
     function aboutSite_Clicked() {
         document.getElementById("about-me").hidden = true;
         document.getElementById("about-site").hidden = false;
+        document.getElementById("about-me-btn").style = "color: #ffffff;";
+        document.getElementById("about-site-btn").style = "color: #40e0d0;";
     }
 </script>

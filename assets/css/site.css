@@ -88,4 +88,6 @@ a:hover {
 .about-tab {
     background-color: rgba(255, 255, 255, 0.3);
     cursor: pointer;
+    margin: 16px;
+    padding: 16px;
 }
