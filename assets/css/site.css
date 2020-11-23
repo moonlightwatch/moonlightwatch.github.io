@@ -29,12 +29,12 @@ a:hover {
     color: #40e0d0;
 }
 
-.disable {
+.m-disable {
     color: gray;
     cursor: not-allowed;
 }
 
-.highlight {
+.m-highlight {
     text-decoration: underline;
     color: #40e0d0;
 }

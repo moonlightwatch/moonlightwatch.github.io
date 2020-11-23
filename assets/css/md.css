@@ -1,6 +1,7 @@
 .markdown-body{
     text-align: left;
     width: 80%;
+    margin: auto;
 }
 
 .markdown-body .octicon {
