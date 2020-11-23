@@ -16,16 +16,12 @@ layout: default
 <div class="markdown-body">
     {{ content }}
 
-    <ul class="post-paginator">
-        <li>
-            {% if page.previous %}
-            <a href="{{ page.previous.url | '/' }}">上一篇・{{ page.previous.title }}</a>
-            {% endif %}
-        </li>
-        <li style="position: absolute; right: 0;">
-            {% if page.next%}
-            <a href="{{ page.next.url | '/' }}">下一篇・{{ page.next.title }}</a>
-            {% endif %}
-        </li>
-    </ul>
+    <div class="post-paginator">
+        {% if page.previous %}
+        <a href="{{ page.previous.url | '/' }}">上一篇・{{ page.previous.title }}</a>
+        {% endif %}
+        {% if page.next%}
+        <a href="{{ page.next.url | '/' }}">下一篇・{{ page.next.title }}</a>
+        {% endif %}
+    </div>
 </div>
