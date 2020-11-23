@@ -5,6 +5,9 @@ timezone: Asia/Shanghai
 paginate: 10
 paginate_path: "/page:num"
 
+markdown: kramdown
+highlighter: rouge
+
 plugins:
   - jemoji
   - jekyll-paginate
