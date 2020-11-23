@@ -2,7 +2,20 @@
 layout: page
 ---
 
-<table style="text-align: left; margin: auto; width: auto;">
+<table style="margin: auto; width: auto;">
+    <tbody>
+        <tr>
+            <td>
+                <h1 class="about-tab" onclick="aboutMe_Clicked();">关于我</h1>
+            </td>
+            <td>
+                <h1 class="about-tab" onclick="aboutSite_Clicked();">关于本站</h1>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<table id="about-me" style="text-align: left; margin: auto; width: auto;">
     <tbody>
         <tr>
             <td colspan="2">
@@ -111,3 +124,24 @@ layout: page
         </tr>
     </tbody>
 </table>
+
+<table id="about-site" style="text-align: left; margin: auto; width: auto;" hidden>
+    <tbody>
+        <tr>
+            <td colspan="2">
+                <h2>基本信息</h2>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<script>
+    function aboutMe_Clicked() {
+        document.getElementById("about-me").hidden = false;
+        document.getElementById("about-site").hidden = true;
+    }
+    function aboutSite_Clicked() {
+        document.getElementById("about-me").hidden = true;
+        document.getElementById("about-site").hidden = false;
+    }
+</script>
