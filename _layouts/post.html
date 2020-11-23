@@ -22,12 +22,12 @@ layout: default
         {% if page.previous %}
         <a href="{{ page.previous.url | '/' }}">上一篇・{{ page.previous.title }}</a>
         {% else %}
-        <a href="#" class="m-disable">上一篇</a>
+        <a class="m-disable">上一篇</a>
         {% endif %}
         {% if page.next%}
         <a href="{{ page.next.url | '/' }}">下一篇・{{ page.next.title }}</a>
         {% else %}
-        <a href="#" class="m-disable">下一篇</a>
+        <a class="m-disable">下一篇</a>
         {% endif %}
     </div>
 </div>
