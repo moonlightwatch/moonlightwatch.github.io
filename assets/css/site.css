@@ -29,11 +29,22 @@ a:hover {
     color: #40e0d0;
 }
 
-.post-list{
+.post-list {
     text-align: left;
     width: auto;
+    max-width: 1024px;
     margin: auto;
 }
+
+.index-post-block {
+    border-radius: 16px;
+    background-color: rgba(255, 255, 255, 0.3);
+    margin: 32px;
+}
+
+.index-post-block>.author {}
+
+.index-post-block>.excerpt {}
 
 .m-disable {
     color: gray;
@@ -72,4 +83,3 @@ a:hover {
     display: inline-block;
     padding: 16px;
 }
-
