@@ -1,7 +1,9 @@
 .markdown-body{
     text-align: left;
-    width: 80%;
+    width: auto;
+    max-width: 80%;
     margin: auto;
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 .markdown-body .octicon {
