@@ -1,8 +1,8 @@
 - name: 主页
   link: /
 - name: 分类
-  link: /about.html
+  link: /categories.html
 - name: 标签
-  link: /tags
+  link: /tags.html
 - name: 关于
   link: /about.html
