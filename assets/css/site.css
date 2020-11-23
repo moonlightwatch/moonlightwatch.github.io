@@ -29,6 +29,12 @@ a:hover {
     color: #40e0d0;
 }
 
+.post-list{
+    text-align: left;
+    width: auto;
+    margin: auto;
+}
+
 .m-disable {
     color: gray;
     cursor: not-allowed;
