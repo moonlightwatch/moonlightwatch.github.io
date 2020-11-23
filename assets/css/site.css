@@ -43,10 +43,6 @@ a:hover {
     padding: 32px;
 }
 
-.index-post-block>.author {}
-
-.index-post-block>.excerpt {}
-
 .m-disable {
     color: gray;
     cursor: not-allowed;
