@@ -29,6 +29,16 @@ a:hover {
     color: #40e0d0;
 }
 
+.disable {
+    color: gray;
+    cursor: not-allowed;
+}
+
+.highlight {
+    text-decoration: underline;
+    color: #40e0d0;
+}
+
 .bg-div {
     position: fixed;
     left: 0;

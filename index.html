@@ -10,17 +10,16 @@ layout: index
 </p>
 {% endfor %}
 
-
-<hr>
-
 <div class="paginator">
   {% if paginator.previous_page%}
   <a href="{{ paginator.previous_page_path | '/' }}">上一页</a>
+  {% else %}
+  <a href="#" class="disable">上一页</a>
   {% endif %}
 
   {% for page in (1..paginator.total_pages) %}
   {% if page == paginator.page %}
-  <a href="#">{{ page }}</a>
+  <a href="#" class="highlight">{{ page }}</a>
   {% elsif page == 1 %}
   <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
   {% else %}
@@ -30,5 +29,7 @@ layout: index
 
   {% if paginator.next_page %}
   <a href="{{ paginator.next_page_path }}">下一页</a>
+  {% else %}
+  <a href="#" class="disable">下一页</a>
   {% endif %}
 </div>
