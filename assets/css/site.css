@@ -25,7 +25,20 @@ a {
 
 .post-paginator {
     width: 100%;
-    text-align-last: justify;
+    text-align: justify;
+}
+
+
+.post-paginator:after {
+    content: "";
+    display: inline-block;
+    overflow: hidden;
+    width: 100%;
+}
+
+.post-paginator>a{
+    display: inline-block;
+    text-align: center;
 }
 
 
