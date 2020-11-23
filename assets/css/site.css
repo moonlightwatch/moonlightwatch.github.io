@@ -67,6 +67,10 @@ a:hover {
     padding: 16px;
 }
 
+.post-content {
+    text-align: left;
+}
+
 footer {
     position: absolute;
     bottom: 0;
