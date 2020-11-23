@@ -1,0 +1,46 @@
+---
+layout: page
+---
+
+<style>
+    .link-icon {
+        width: 64px;
+        height: 64px;
+    }
+
+    .link-a {
+        color: white;
+        text-decoration: none;
+        display: inline-block;
+        padding: 16px;
+    }
+
+    .link-a:hover {
+        color: turquoise;
+        text-decoration-line: underline;
+    }
+
+    .link-a>span {
+        font-size: 24px;
+    }
+
+    .link-sub {
+        padding: 16px;
+    }
+</style>
+
+{% for item in site.data.links %}
+
+<table>
+    <tr>
+        <td rowspan="2"><img class="link-icon" src="{{ item.icon_url }}"></td>
+        <td><a class="link-a" href="{{ item.url }}" target="_blank">
+                <span>{{ item.title }}</span>
+            </a>
+        </td>
+    </tr>
+    <tr>
+        <td><i class="link-sub">{{ item.sub_title }}</i></td>
+    </tr>
+</table>
+{% endfor %}
