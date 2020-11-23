@@ -23,8 +23,15 @@ a {
     height: 100%
 }
 
-.post-paginator{
+.post-paginator {
     width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.post-paginator>li {
+    display: inline;
 }
 
 a:hover {
@@ -93,6 +100,6 @@ a:hover {
     text-decoration: underline;
 }
 
-footer{
+footer {
     margin-top: 64px;
 }
