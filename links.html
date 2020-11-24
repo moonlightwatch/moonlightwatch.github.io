@@ -35,10 +35,10 @@ layout: page
 
 <h1>友情链接</h1>
 
-<div style="margin: auto; width: auto;">
-    {% for item in site.data.links %}
+<div style="margin: auto; width: auto; display: inline-block;">
 
     <table>
+        {% for item in site.data.links %}
         <tr>
             <td rowspan="2"><img class="link-icon" src="{{ item.icon_url }}"></td>
             <td><a class="link-a" href="{{ item.url }}" target="_blank">
@@ -49,9 +49,8 @@ layout: page
         <tr>
             <td><i class="link-sub">{{ item.sub_title }}</i></td>
         </tr>
+        {% endfor %}
     </table>
-    {% endfor %}
-
     <div id="gitalk-container"></div>
 </div>
 <script>
