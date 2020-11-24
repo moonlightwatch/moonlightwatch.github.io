@@ -2,6 +2,10 @@
 layout: page
 ---
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
 <style>
     .link-icon {
         width: 64px;
@@ -31,18 +35,35 @@ layout: page
 
 <h1>友情链接</h1>
 
-{% for item in site.data.links %}
+<div style="margin: auto; width: auto;">
+    {% for item in site.data.links %}
 
-<table style="margin: auto; width: auto;">
-    <tr>
-        <td rowspan="2"><img class="link-icon" src="{{ item.icon_url }}"></td>
-        <td><a class="link-a" href="{{ item.url }}" target="_blank">
-                <span>{{ item.title }}</span>
-            </a>
-        </td>
-    </tr>
-    <tr>
-        <td><i class="link-sub">{{ item.sub_title }}</i></td>
-    </tr>
-</table>
-{% endfor %}
+    <table>
+        <tr>
+            <td rowspan="2"><img class="link-icon" src="{{ item.icon_url }}"></td>
+            <td><a class="link-a" href="{{ item.url }}" target="_blank">
+                    <span>{{ item.title }}</span>
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td><i class="link-sub">{{ item.sub_title }}</i></td>
+        </tr>
+    </table>
+    {% endfor %}
+
+    <div id="gitalk-container"></div>
+</div>
+<script>
+    var gitalk = new Gitalk({
+        clientID: '{{ site.gitalk.clientID }}',
+        clientSecret: '{{ site.gitalk.clientSecrets }}',
+        repo: '{{ site.gitalk.repo }}',
+        owner: '{{ site.gitalk.owner }}',
+        admin: ['{{ site.gitalk.owner }}'],
+        id: location.pathname.slice(-50),
+        distractionFreeMode: false
+    })
+
+    gitalk.render('gitalk-container')
+</script>

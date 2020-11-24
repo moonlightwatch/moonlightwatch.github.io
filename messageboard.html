@@ -1,0 +1,24 @@
+---
+layout: page
+---
+
+<h1>留言板</h1>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
+<div id="gitalk-container" style="margin: auto; width: auto;"></div>
+<script>
+    var gitalk = new Gitalk({
+        clientID: '{{ site.gitalk.clientID }}',
+        clientSecret: '{{ site.gitalk.clientSecrets }}',
+        repo: '{{ site.gitalk.repo }}',
+        owner: '{{ site.gitalk.owner }}',
+        admin: ['{{ site.gitalk.owner }}'],
+        id: location.pathname.slice(-50),
+        distractionFreeMode: false
+    })
+
+    gitalk.render('gitalk-container')
+</script>
