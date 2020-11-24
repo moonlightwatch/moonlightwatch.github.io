@@ -16,10 +16,11 @@ layout: default
     {% endfor %}
 </p>
 
+<div class="main-block">
 
-<div class="m-markdown-body">
-    {{ content }}
-
+    <div class="m-markdown-body">
+        {{ content }}
+    </div>
     <div class="post-paginator">
         {% if page.previous %}
         <a href="{{ page.previous.url | '/' }}">上一篇・{{ page.previous.title }}</a>
