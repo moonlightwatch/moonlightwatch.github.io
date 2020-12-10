@@ -1,7 +1,5 @@
-<ul class="nav-ul">
+<nav>
     {% for item in site.data.navigation %}
-    <li>
         <a class="nav-link" href="{{ item.link }}">{{ item.name }}</a>
-    </li>
     {% endfor %}
-</ul>
+</nav>
