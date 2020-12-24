@@ -1,7 +1,6 @@
 .m-markdown-body {
     text-align: left;
     margin-top: 64px;
-    color: white;
     border-radius: 16px;
     padding: 16px;
 
@@ -118,7 +117,6 @@
 }
 
 .m-markdown-body a {
-    color: #40e0d0;
     text-decoration: none;
 }
 

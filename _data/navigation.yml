@@ -1,12 +1,8 @@
 - name: 主页
   link: /
-- name: 分类
-  link: /categories.html
-- name: 标签
-  link: /tags.html
-- name: 关于
-  link: /about.html
 - name: 留言板
   link: /messageboard.html
+- name: 关于
+  link: /about.html
 - name: 友链
   link: /links.html

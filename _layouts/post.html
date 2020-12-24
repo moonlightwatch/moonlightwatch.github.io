@@ -9,26 +9,26 @@ layout: default
 <h1>{{ page.title }}</h1>
 
 <p>
-    <span>📁 {{ page.category }}</span> |
+    <span class="badge badge-primary">{{ page.category }}</span> |
     <span>📅 {{ page.date | date: "%Y-%m-%d" }}</span> |
     {% for tag in page.tags %}
-    <span>🔖 {{ tag }} </span>
+    <span class="badge badge-light">{{ tag }}</span>
     {% endfor %}
 </p>
 
 <div class="m-markdown-body">
     {{ content }}
 </div>
-<div class="post-paginator">
+<div class="pt-5 pb-5">
     {% if page.previous %}
-    <a href="{{ page.previous.url | '/' }}">上一篇・{{ page.previous.title }}</a>
+    <a class="btn btn-outline-primary float-left" href="{{ page.previous.url | '/' }}">上一篇・{{ page.previous.title }}</a>
     {% else %}
-    <a class="m-disable">上一篇</a>
+    <a class="btn btn-outline-primary float-left disabled">上一篇</a>
     {% endif %}
     {% if page.next%}
-    <a href="{{ page.next.url | '/' }}">下一篇・{{ page.next.title }}</a>
+    <a class="btn btn-outline-primary float-right" href="{{ page.next.url | '/' }}">下一篇・{{ page.next.title }}</a>
     {% else %}
-    <a class="m-disable">下一篇</a>
+    <a class="btn btn-outline-primary float-right disabled">下一篇</a>
     {% endif %}
 </div>
 

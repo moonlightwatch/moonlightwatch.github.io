@@ -6,50 +6,21 @@ layout: page
 <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
 
 
-<style>
-    .link-icon {
-        width: 64px;
-        height: 64px;
-    }
-
-    .link-a {
-        color: white;
-        text-decoration: none;
-        display: inline-block;
-        padding: 16px;
-    }
-
-    .link-a:hover {
-        color: turquoise;
-        text-decoration-line: underline;
-    }
-
-    .link-a>span {
-        font-size: 24px;
-    }
-
-    .link-sub {
-        padding: 16px;
-    }
-</style>
 
 <h1>友情链接</h1>
 
 
-<table>
-    {% for item in site.data.links %}
-    <tr>
-        <td rowspan="2"><img class="link-icon" src="{{ item.icon_url }}"></td>
-        <td><a class="link-a" href="{{ item.url }}" target="_blank">
-                <span>{{ item.title }}</span>
-            </a>
-        </td>
-    </tr>
-    <tr>
-        <td><i class="link-sub">{{ item.sub_title }}</i></td>
-    </tr>
-    {% endfor %}
-</table>
+{% for item in site.data.links %}
+<div class="card" style="width: 18rem;">
+    <img src="{{ item.icon_url }}" class="card-img-top" alt="{{ item.title }}" style="width: 128px;height: 128;margin: auto;">
+    <div class="card-body">
+        <a href="{{ item.url }}" target="_blank">
+            <h5 class="card-title">{{ item.title }}</h5>
+        </a>
+        <p class="card-text">{{ item.sub_title }}</p>
+    </div>
+</div>
+{% endfor %}
 <div id="gitalk-container"></div>
 
 <script>

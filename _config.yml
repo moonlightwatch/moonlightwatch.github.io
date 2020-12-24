@@ -1,5 +1,6 @@
 
-title: MoonLightWatch's Blog
+title: 浮生偶记
+subtitle: 听风 | 聆月 | 写代码
 timezone: Asia/Shanghai
 
 paginate: 10
@@ -7,7 +8,6 @@ paginate_path: "/page:num"
 
 
 plugins:
-  - jemoji
   - jekyll-paginate
 
 gitalk:
