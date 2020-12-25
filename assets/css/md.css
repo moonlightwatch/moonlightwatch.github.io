@@ -764,7 +764,7 @@
     max-width: auto;
     padding: 0;
     margin: 0;
-    overflow: visible;
+    overflow: scroll;
     line-height: inherit;
     word-wrap: normal;
     background-color: initial;
@@ -829,7 +829,7 @@
 }
 
 .m-markdown-body .blob-code-inner {
-    overflow: visible;
+    overflow: scroll;
     font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
     font-size: 12px;
     color: #24292e;
