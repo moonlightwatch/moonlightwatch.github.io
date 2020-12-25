@@ -3,6 +3,9 @@ title: 浮生偶记
 subtitle: 听风 | 聆月 | 写代码
 timezone: Asia/Shanghai
 
+author: moonlightwatch
+email: moonlightwatch@hotmail.com
+
 paginate: 10
 paginate_path: "/page:num"
 
