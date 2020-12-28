@@ -25,7 +25,7 @@
     <meta name="keywords" content="{% for item in page.tags %} {{item}}, {% endfor %}"/>
     {% endif %}
 
-    <title>{% if page.title %} {{ page.title }} {% endif %} - {{ site.title }} </title>
+    <title>{% if page.title %} {{ page.title }} - {% endif %}{{ site.title }} </title>
 </head>
 
 <body>
