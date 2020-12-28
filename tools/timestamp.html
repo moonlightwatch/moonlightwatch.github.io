@@ -1,0 +1,42 @@
+---
+layout: tool
+title: 时间戳转换工具
+---
+
+
+<h2>时间戳转换工具</h2>
+
+<hr>
+
+<div class="input-group">
+    <span class="input-group-text" id="timestamp-span">时间戳（秒）</span>
+    <input id="timestamp-text" type="text" class="form-control" aria-describedby="timestamp-span">
+</div>
+<p></p>
+
+<div class="input-group">
+    <span class="input-group-text" id="time-span">时间（年/月/日 时:分:秒）</span>
+    <input id="time-text" type="text" class="form-control" aria-describedby="time-span">
+</div>
+
+<script>
+    function formatTime(t) {
+        return t.getFullYear().toString() + "/" + (t.getMonth() + 1).toString().padStart(2, "0") + "/" + t.getDate().toString().padStart(2, "0") + " " + t.getHours().toString().padStart(2, "0") + ":" + t.getMinutes().toString().padStart(2, "0") + ":" + t.getSeconds().toString().padStart(2, "0");
+    }
+    let now = new Date();
+
+    document.getElementById("timestamp-text").value = Math.round(now.getTime() / 1000);
+    document.getElementById("time-text").value = formatTime(now);
+
+    document.getElementById("timestamp-text").onkeyup = function (e) {
+        let timestamp_str = document.getElementById("timestamp-text").value;
+        let date_input = new Date(parseInt(timestamp_str) * 1000);
+        document.getElementById("time-text").value = formatTime(date_input);
+    }
+    document.getElementById("time-text").onkeyup = function (e) {
+        let time_str = document.getElementById("time-text").value;
+        let date_input = new Date(Date.parse(time_str));
+        document.getElementById("timestamp-text").value = date_input.getTime()/1000;
+    }
+
+</script>
