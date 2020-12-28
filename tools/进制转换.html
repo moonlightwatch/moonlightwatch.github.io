@@ -1,0 +1,105 @@
+---
+layout: tool
+title: 进制转换工具
+---
+
+
+<h2>进制转换工具</h2>
+
+<hr>
+
+<div class="input-group">
+    <span class="input-group-text" id="input2-span">二进制</span>
+    <input id="input2-text" type="text" class="form-control" aria-describedby="input2-span">
+</div>
+
+<p></p>
+
+<div class="input-group">
+    <span class="input-group-text" id="input8-span">八进制</span>
+    <input id="input8-text" type="text" class="form-control" aria-describedby="input8-span">
+</div>
+
+<p></p>
+
+<div class="input-group">
+    <span class="input-group-text" id="input10-span">十进制</span>
+    <input id="input10-text" type="text" class="form-control" aria-describedby="input10-span">
+</div>
+
+<p></p>
+
+<div class="input-group">
+    <span class="input-group-text" id="input16-span">十六进制</span>
+    <input id="input16-text" type="text" class="form-control" aria-describedby="input16-span">
+</div>
+
+<p></p>
+
+<script>
+    document.getElementById("input2-text").onkeyup = function (e) {
+        let s = document.getElementById("input2-text").value;
+        let cache = "";
+        for (let i = 0; i < s.length; i++) {
+            if (s[i] == '1' || s[i] == '0') {
+                cache += s[i].toString();
+            }
+        }
+        document.getElementById("input2-text").value = cache;
+        let num = parseInt(cache, 2);
+        document.getElementById("input8-text").value = "0" + num.toString(8);
+        document.getElementById("input10-text").value = num.toString(10);
+        document.getElementById("input16-text").value = "0x" + num.toString(16);
+
+    }
+    document.getElementById("input8-text").onkeyup = function (e) {
+        let s = document.getElementById("input8-text").value;
+        let cache = "";
+        for (let i = 0; i < s.length; i++) {
+            if (s[i] >= '0' && s[i] < '8') {
+                cache += s[i].toString();
+            }
+        }
+        document.getElementById("input8-text").value = cache;
+        let num = parseInt(cache, 8);
+        document.getElementById("input2-text").value = num.toString(2);
+        document.getElementById("input10-text").value = num.toString(10);
+        document.getElementById("input16-text").value = "0x" + num.toString(16);
+    }
+    document.getElementById("input10-text").onkeyup = function (e) {
+        let s = document.getElementById("input10-text").value;
+        let cache = "";
+        for (let i = 0; i < s.length; i++) {
+            if (s[i] >= '0' && s[i] <= '9') {
+                cache += s[i].toString();
+            }
+        }
+        document.getElementById("input10-text").value = cache;
+        let num = parseInt(cache, 10);
+        document.getElementById("input2-text").value = num.toString(2);
+        document.getElementById("input8-text").value = "0" + num.toString(8);
+        document.getElementById("input16-text").value = "0x" + num.toString(16);
+    }
+    document.getElementById("input16-text").onkeyup = function (e) {
+        let starts = "";
+        let s = document.getElementById("input16-text").value.toLowerCase();
+        if (s.startsWith("0x")) {
+            s = s.slice(2);
+            starts = "0x";
+        }
+        if (s.length == 0) {
+            return;
+        }
+        let cache = "";
+        for (let i = 0; i < s.length; i++) {
+            if ((s[i] >= '0' && s[i] <= '9') || (s[i] >= 'a' && s[i] <= 'f') || s[i] == 'x') {
+                cache += s[i].toString();
+            }
+        }
+        document.getElementById("input16-text").value = starts + cache;
+        let num = parseInt(cache, 16);
+        document.getElementById("input2-text").value = num.toString(2);
+        document.getElementById("input8-text").value = "0" + num.toString(8);
+        document.getElementById("input10-text").value = num.toString(10);
+    }
+</script>
