@@ -7,7 +7,8 @@ title: 站点收藏
 <hr>
 {% for item in site.data.goodsites %}
 <div class="card" style="width: 18rem;margin: 24px">
-    <img src="{{ item.icon_url }}" class="card-img-top" alt="{{ item.name }}" style="width: 128px;height: 128;margin: auto;">
+    <img src="{{ item.icon_url }}" class="card-img-top" alt="{{ item.name }}"
+        style="width: 128px;height: 128;margin: auto;margin-top: 24px;">
     <div class="card-body" style="text-align: center;">
         <a href="{{ item.url }}" target="_blank">
             <h5 class="card-title">{{ item.name }}</h5>
