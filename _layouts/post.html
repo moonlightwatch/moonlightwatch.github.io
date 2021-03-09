@@ -19,7 +19,11 @@ layout: default
 <div class="m-markdown-body">
     {{ content }}
 </div>
-{% include toc.html html=content %}
+
+<div class="navbar-expand-lg">
+    <div class="collapse navbar-collapse p-5" style="position: sticky;">{% include toc.html html=content %}</div>
+</div>
+
 
 <div class="pt-5 pb-5">
     {% if page.previous %}
