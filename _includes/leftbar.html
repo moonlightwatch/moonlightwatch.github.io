@@ -31,8 +31,10 @@
             </svg>
         </a>
     </li>
-    <li class="list-group-item" style="text-align: center;">
-        {{ page.layout }}
+    <li class="list-group-item" style="text-align: left;">
+        {% if page.layout == "post" %}
+        <h2>目录</h2>
         {% include toc.html html=content %}
+        {% endif %}
     </li>
 </ul>
