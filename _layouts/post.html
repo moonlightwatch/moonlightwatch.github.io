@@ -18,10 +18,8 @@ layout: default
 
 <div class="m-markdown-body">
     {{ content }}
+    {% include toc.md %}
 </div>
-
-* TOC
-{:toc}
 
 <div class="pt-5 pb-5">
     {% if page.previous %}
