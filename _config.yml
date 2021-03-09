@@ -9,6 +9,9 @@ email: moonlightwatch@hotmail.com
 paginate: 10
 paginate_path: "/page:num"
 
+markdown: kramdown
+highlighter: rouge
+
 
 plugins:
   - jekyll-paginate
