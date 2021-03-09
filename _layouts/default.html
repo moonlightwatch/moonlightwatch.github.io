@@ -22,7 +22,7 @@
     <meta name="author" content="{{ site.author }}, {{ site.email }}" />
 
     {% if page.tags %}
-    <meta name="keywords" content="{% for item in page.tags %} {{item}}, {% endfor %}"/>
+    <meta name="keywords" content="{% for item in page.tags %} {{item}}, {% endfor %}" />
     {% endif %}
 
     <title>{% if page.title %} {{ page.title }} - {% endif %}{{ site.title }} </title>
@@ -41,6 +41,7 @@
             </div>
         </div>
     </div>
+    
     {% include footer.html %}
 
     <!-- Optional JavaScript -->

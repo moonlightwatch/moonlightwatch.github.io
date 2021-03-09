@@ -1,8 +1,22 @@
-
 <footer class="p-5">
     <hr>
-    Copyright © <span id="copyright-year"></span> <a href="https://moonlightwatch.com">MoonLightWatch</a>. All rights reserved.
+    Copyright © <span id="copyright-year"></span> <a href="https://moonlightwatch.com">MoonLightWatch</a>. All rights
+    reserved.
 </footer>
+<section class="back-to-top" onclick='this.scrollIntoView({behavior:"smooth", block:"start"});'>
+    回到顶部
+</section>
+<style>
+    .back-to-top {
+        width: 18px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        box-shadow: 0 0 2px #333;
+        position: fixed;
+        right: 20px;
+        bottom: 40px;
+    }
+</style>
 
 <script>
     var date = new Date();
