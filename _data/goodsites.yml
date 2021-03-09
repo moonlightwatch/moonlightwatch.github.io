@@ -1,3 +1,7 @@
 - url: https://www.hacked.com.cn/index.php
   name: 全球被黑站点统计系统
   icon_url: https://www.hacked.com.cn/favicon.ico
+
+- url: https://octicons-primer.vercel.app/octicons/
+  name: Octicons
+  icon_url: /assets/images/goodsites/octicons.png

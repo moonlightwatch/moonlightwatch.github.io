@@ -3,8 +3,12 @@
     Copyright © <span id="copyright-year"></span> <a href="https://moonlightwatch.com">MoonLightWatch</a>. All rights
     reserved.
 </footer>
-<section class="back-to-top" onclick='this.scrollIntoView({behavior:"smooth", block:"start"});'>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M4.97 12.97a.75.75 0 101.06 1.06L11 9.06v12.19a.75.75 0 001.5 0V9.06l4.97 4.97a.75.75 0 101.06-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25zM4.75 3.5a.75.75 0 010-1.5h14.5a.75.75 0 010 1.5H4.75z"></path></svg>
+<section class="back-to-top" onclick='scrollTopSmooth(200);'>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+        <path
+            d="M4.97 12.97a.75.75 0 101.06 1.06L11 9.06v12.19a.75.75 0 001.5 0V9.06l4.97 4.97a.75.75 0 101.06-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25zM4.75 3.5a.75.75 0 010-1.5h14.5a.75.75 0 010 1.5H4.75z">
+        </path>
+    </svg>
 </section>
 <style>
     .back-to-top {
@@ -15,9 +19,45 @@
         right: 20px;
         bottom: 40px;
     }
+
+    .back-to-top:hover {
+        cursor: pointer;
+    }
 </style>
 
 <script>
     var date = new Date();
     document.getElementById("copyright-year").innerText = date.getFullYear();
+    var easeout = function (position, destination, rate, callback) {
+        if (position === destination || typeof destination !== 'number') {
+            return false;
+        }
+        destination = destination || 0;
+        rate = rate || 2;
+
+        // 不存在原生`requestAnimationFrame`，用`setTimeout`模拟替代
+        if (!window.requestAnimationFrame) {
+            window.requestAnimationFrame = function (fn) {
+                return setTimeout(fn, 17);
+            }
+        }
+
+        var step = function () {
+            position = position + (destination - position) / rate;
+            if (Math.abs(destination - position) < 1) {
+                callback(destination, true);
+                return;
+            }
+            callback(position, false);
+            requestAnimationFrame(step);
+        };
+        step();
+    }
+    var scrollTopSmooth = function (position) {
+        // 当前滚动高度
+        var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        easeout(scrollTop, position, 5, function (val) {
+            window.scrollTo(0, val);
+        });
+    }
 </script>
