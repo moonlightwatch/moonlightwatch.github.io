@@ -20,11 +20,6 @@ layout: default
     {{ content }}
 </div>
 
-<div class="navbar-expand-lg">
-    <div class="collapse navbar-collapse p-5" style="position: sticky;">{% include toc.html html=content %}</div>
-</div>
-
-
 <div class="pt-5 pb-5">
     {% if page.previous %}
     <a class="btn btn-outline-primary float-left" href="{{ page.previous.url | '/' }}">上一篇・{{ page.previous.title }}</a>
