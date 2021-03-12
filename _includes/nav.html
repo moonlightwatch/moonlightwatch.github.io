@@ -1,16 +1,52 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light ml-5 mr-5">
-    <a class="navbar-brand" href="#">{{ site.title }}</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">{{ site.title }}</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            {% for item in site.data.navbar %}
-            <li class="nav-item">
-                <a class="nav-link" href="{{ item.link }}">{{ item.name }}</a>
-            </li>
-            {% endfor %}
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                {% for item in site.data.navbar %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ item.link }}">{{ item.name }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+            <span class="navbar-text" id="words-text"></span>
+        </div>
     </div>
 </nav>
+<div id="words" hidden>
+    {% for item in site.data.headerwords %}
+    <span>{{ item.text }}</span>
+    {% endfor %}
+</div>
+<script>
+    var words = new Array();
+    let wordItems = document.getElementById("words").childNodes;
+    
+    function viewopacity() {
+        let element = document.getElementById("words-text");
+        element.style.opacity = parseFloat(element.style.opacity) + 0.02;
+        if (element.style.opacity >= 1) {
+            clearInterval(viewTimer);
+        }
+    }
+
+    function tick() {
+        let element = document.getElementById("words-text");
+        if (words_index == wordItems.length - 1) {
+            words_index = 0;
+        } else {
+            words_index += 1;
+        }
+        element.style.opacity = 0;
+        element.innerHTML = wordItems[words_index].innerText;
+        viewTimer = self.setInterval("viewopacity()", 80);
+    }
+
+    tick();
+    self.setInterval("tick()", 10000);
+</script>
