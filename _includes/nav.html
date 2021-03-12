@@ -25,7 +25,7 @@
 </div>
 <script>
     var words = new Array();
-    let wordItems = document.getElementById("words").childNodes;
+    let wordItems = document.getElementById("words").children;
     var words_index=0;
     
     function viewopacity() {
@@ -44,7 +44,7 @@
             words_index += 1;
         }
         element.style.opacity = 0;
-        element.innerHTML = wordItems[words_index].innerText;
+        element.innerText = wordItems[words_index].innerText;
         viewTimer = self.setInterval("viewopacity()", 80);
     }
 
