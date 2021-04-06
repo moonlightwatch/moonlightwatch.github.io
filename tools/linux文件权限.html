@@ -80,11 +80,11 @@ title: Linux文件权限工具
         }
         console.log(u);
         console.log(g);
-        console.log(o); 
+        console.log(o);
 
-        document.getElementById("u_x").checked = (u & 1) === 1;
-        document.getElementById("u_w").checked = (u & 2) === 2;
-        document.getElementById("u_r").checked = (u & 4) === 4;
+        document.getElementById("u_x").checked = (u & 1) == 1;
+        document.getElementById("u_w").checked = (u & 2) == 2;
+        document.getElementById("u_r").checked = (u & 4) == 4;
 
         document.getElementById("g_x").checked = (g & 1) == 1;
         document.getElementById("g_w").checked = (g & 2) == 2;
