@@ -18,14 +18,17 @@ title: Linux文件权限工具
     </thead>
     <tbody>
         <tr>
-            <td><span>r</span><input id="u_r" type="checkbox" onchange="checkChanged();"><span> w</span><input id="u_w" type="checkbox"
-                    onchange="checkChanged();"><span> x</span><input id="u_x" type="checkbox" onchange="checkChanged();">
+            <td><span>r</span><input id="u_r" type="checkbox" onchange="checkChanged();"><span> w</span><input id="u_w"
+                    type="checkbox" onchange="checkChanged();"><span> x</span><input id="u_x" type="checkbox"
+                    onchange="checkChanged();">
             </td>
-            <td><span>r</span><input id="g_r" type="checkbox" onchange="checkChanged();"><span> w</span><input id="g_w" type="checkbox"
-                    onchange="checkChanged();"><span> x</span><input id="g_x" type="checkbox" onchange="checkChanged();">
+            <td><span>r</span><input id="g_r" type="checkbox" onchange="checkChanged();"><span> w</span><input id="g_w"
+                    type="checkbox" onchange="checkChanged();"><span> x</span><input id="g_x" type="checkbox"
+                    onchange="checkChanged();">
             </td>
-            <td><span>r</span><input id="o_r" type="checkbox" onchange="checkChanged();"><span> w</span><input id="o_w" type="checkbox"
-                    onchange="checkChanged();"><span> x</span><input id="o_x" type="checkbox" onchange="checkChanged();">
+            <td><span>r</span><input id="o_r" type="checkbox" onchange="checkChanged();"><span> w</span><input id="o_w"
+                    type="checkbox" onchange="checkChanged();"><span> x</span><input id="o_x" type="checkbox"
+                    onchange="checkChanged();">
             </td>
         </tr>
     </tbody>
@@ -96,4 +99,7 @@ title: Linux文件权限工具
 
     }
 
+
+    document.getElementById("f_p").value = 777;
+    textChanged('777');
 </script>
