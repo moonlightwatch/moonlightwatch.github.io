@@ -1,0 +1,99 @@
+---
+layout: tool
+title: Linux文件权限工具
+---
+
+
+<h2>Linux文件权限工具</h2>
+
+<hr>
+<p><span>权限：</span><input id="f_p" type="text" onkeyup="textChanged(this.value);"></p>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">用 户</th>
+            <th scope="col">用户组</th>
+            <th scope="col">其他人</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>r<input id="u_r" type="checkbox" onchange="checkChanged();"> w<input id="u_w" type="checkbox"
+                    onchange="checkChanged();">x<input id="u_x" type="checkbox" onchange="checkChanged();">
+            </td>
+            <td>r<input id="g_r" type="checkbox" onchange="checkChanged();"> w<input id="g_w" type="checkbox"
+                    onchange="checkChanged();">x<input id="g_x" type="checkbox" onchange="checkChanged();">
+            </td>
+            <td>r<input id="o_r" type="checkbox" onchange="checkChanged();"> w<input id="o_w" type="checkbox"
+                    onchange="checkChanged();">x<input id="o_x" type="checkbox" onchange="checkChanged();">
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>r:读取； w:写入； x:运行</p>
+
+<script>
+    function checkChanged() {
+        let u = 0;
+        let g = 0;
+        let o = 0;
+        if (document.getElementById("u_r").checked) {
+            u = u | 4;
+        }
+        if (document.getElementById("u_w").checked) {
+            u = u | 2;
+        }
+        if (document.getElementById("u_x").checked) {
+            u = u | 1;
+        }
+        if (document.getElementById("g_r").checked) {
+            g = g | 4;
+        }
+        if (document.getElementById("g_w").checked) {
+            g = g | 2;
+        }
+        if (document.getElementById("g_x").checked) {
+            g = g | 1;
+        }
+        if (document.getElementById("o_r").checked) {
+            o = o | 4;
+        }
+        if (document.getElementById("o_w").checked) {
+            o = o | 2;
+        }
+        if (document.getElementById("o_x").checked) {
+            o = o | 1;
+        }
+        document.getElementById("f_p").value = u + "" + g + "" + o;
+    }
+
+    function textChanged(text) {
+        if (text.length > 3) {
+            document.getElementById("f_p").value = text.substr(0, 3);
+            return
+        }
+        let u = text[0];
+        let g = text[1];
+        let o = text[2];
+        if (u > '7' || g > '7' || o > '7' || u < '0' || g < '0' || o < '0') {
+            return
+        }
+        console.log(u);
+        console.log(g);
+        console.log(o); 
+
+        document.getElementById("u_x").checked = (u & 1) === 1;
+        document.getElementById("u_w").checked = (u & 2) === 2;
+        document.getElementById("u_r").checked = (u & 4) === 4;
+
+        document.getElementById("g_x").checked = (g & 1) == 1;
+        document.getElementById("g_w").checked = (g & 2) == 2;
+        document.getElementById("g_r").checked = (g & 4) == 4;
+
+        document.getElementById("o_x").checked = (o & 1) == 1;
+        document.getElementById("o_w").checked = (o & 2) == 2;
+        document.getElementById("o_r").checked = (o & 4) == 4;
+
+    }
+
+</script>
