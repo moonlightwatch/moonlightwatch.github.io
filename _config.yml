@@ -17,8 +17,8 @@ plugins:
   - jekyll-paginate
 
 gitalk:
-  clientID: 2065d0dbea93a4ae42c7
-  clientSecrets: 72168c8442387993b970dbc40d181f35dad8c680
+  clientID: 2584221be2ce79685562
+  clientSecrets: 72c84aa79198b292b62ed75b960547fc28439814
   repo: moonlightwatch.github.io
   owner: moonlightwatch
   
