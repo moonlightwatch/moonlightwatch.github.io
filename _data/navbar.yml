@@ -1,5 +1,7 @@
 - name: 主页
   link: /
+- name: 分类
+  link: /categories.html
 - name: 留言板
   link: /messageboard.html
 - name: 工具
