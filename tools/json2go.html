@@ -441,7 +441,19 @@ title: JSON 转换 go struct
 <textarea id="go" style="width: 100%;"></textarea>
 
 <script>
-    document.getElementById("json").onkeyup = function(e){
-        document.getElementById("go").value = jsonToGo(document.getElementById("json").value).go;
+    document.getElementById("json").onkeyup = function (e) {
+        let jsonEle = document.getElementById("json");
+        let l = jsonEle.value.split("\n").length + 1;
+        if (l > 3) {
+            jsonEle.rows = l;
+        }
+
+
+        let goEle = document.getElementById("go");
+        goEle.value = jsonToGo(jsonEle.value).go;
+        let l = goEle.value.split("\n").length + 1;
+        if (l > 3) {
+            goEle.rows = l;
+        }
     }
 </script>
