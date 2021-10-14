@@ -451,7 +451,7 @@ title: JSON 转换 go struct
 
         let goEle = document.getElementById("go");
         goEle.value = jsonToGo(jsonEle.value).go;
-        let l = goEle.value.split("\n").length + 1;
+        l = goEle.value.split("\n").length + 1;
         if (l > 3) {
             goEle.rows = l;
         }
