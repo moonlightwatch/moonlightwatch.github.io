@@ -441,7 +441,7 @@ title: JSON 转换 go struct
 <textarea id="go" style="width: 100%;"></textarea>
 
 <script>
-    document.getElementById("json").onkeyup = function (e) {
+    function doConvert(){
         let jsonEle = document.getElementById("json");
         let l = jsonEle.value.split("\n").length + 1;
         if (l > 3) {
@@ -455,5 +455,11 @@ title: JSON 转换 go struct
         if (l > 3) {
             goEle.rows = l;
         }
+    }
+    document.onload = function(e){
+        doConvert();
+    }
+    document.getElementById("json").onkeyup = function (e) {
+        doConvert();
     }
 </script>
