@@ -435,13 +435,17 @@ title: JSON 转换 go struct
 <h2>JSON 转换为 go struct</h2>
 
 <hr>
-<p>输入JSON ↓</p>
-<textarea id="json" style="width: 100%;"></textarea>
-<p>Go Struct ↓</p>
-<textarea id="go" style="width: 100%;"></textarea>
+<div style="display: inline-block;">
+    <p>输入JSON ↓</p>
+    <textarea id="json" style="width: 100%;"></textarea>
+</div>
+<div style="display: inline-block;">
+    <p>Go Struct ↓</p>
+    <textarea id="go" style="width: 100%;"></textarea>
+</div>
 
 <script>
-    function doConvert(){
+    function doConvert() {
         let jsonEle = document.getElementById("json");
         let l = jsonEle.value.split("\n").length + 1;
         if (l > 3) {
@@ -456,7 +460,7 @@ title: JSON 转换 go struct
             goEle.rows = l;
         }
     }
-    document.onload = function(e){
+    document.onload = function (e) {
         doConvert();
     }
     document.getElementById("json").onkeyup = function (e) {
