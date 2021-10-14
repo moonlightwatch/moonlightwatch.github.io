@@ -437,11 +437,11 @@ title: JSON 转换 go struct
 <hr>
 <div style="display: inline-block;width: 45%;">
     <p>输入JSON ↓</p>
-    <textarea id="json" style="width:100%;" rows="10"></textarea>
+    <textarea id="json" style="width:100%;resize: none;vertical-align:super;" rows="10"></textarea>
 </div>
 <div style="display: inline-block;width: 45%;">
     <p>Go Struct ↓</p>
-    <textarea id="go" style="width: 100%;" rows="10"></textarea>
+    <textarea id="go" style="width: 100%;resize: none;vertical-align:super;" rows="10"></textarea>
 </div>
 
 <script>
@@ -450,7 +450,7 @@ title: JSON 转换 go struct
         let l = jsonEle.value.split("\n").length + 1;
         if (l > 10) {
             jsonEle.rows = l;
-        }else{
+        } else {
             jsonEle.rows = 10;
         }
 
@@ -460,13 +460,11 @@ title: JSON 转换 go struct
         l = goEle.value.split("\n").length + 1;
         if (l > 10) {
             goEle.rows = l;
-        }else{
+        } else {
             goEle.rows = 10;
         }
     }
-    document.onload = function (e) {
-        doConvert();
-    }
+    doConvert();
     document.getElementById("json").onkeyup = function (e) {
         doConvert();
     }
