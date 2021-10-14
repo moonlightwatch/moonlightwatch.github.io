@@ -437,27 +437,31 @@ title: JSON 转换 go struct
 <hr>
 <div style="display: inline-block;width: 45%;">
     <p>输入JSON ↓</p>
-    <textarea id="json" style="width:100%;"></textarea>
+    <textarea id="json" style="width:100%;" rows="10"></textarea>
 </div>
 <div style="display: inline-block;width: 45%;">
     <p>Go Struct ↓</p>
-    <textarea id="go" style="width: 100%;"></textarea>
+    <textarea id="go" style="width: 100%;" rows="10"></textarea>
 </div>
 
 <script>
     function doConvert() {
         let jsonEle = document.getElementById("json");
         let l = jsonEle.value.split("\n").length + 1;
-        if (l > 3) {
+        if (l > 10) {
             jsonEle.rows = l;
+        }else{
+            jsonEle.rows = 10;
         }
 
 
         let goEle = document.getElementById("go");
         goEle.value = jsonToGo(jsonEle.value).go;
         l = goEle.value.split("\n").length + 1;
-        if (l > 3) {
+        if (l > 10) {
             goEle.rows = l;
+        }else{
+            goEle.rows = 10;
         }
     }
     document.onload = function (e) {
