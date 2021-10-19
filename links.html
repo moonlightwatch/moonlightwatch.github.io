@@ -9,19 +9,24 @@ title: 友情链接
 
 
 <h1>友情链接</h1>
+<hr>
+<div class="container">
+    <div class="row justify-content-start">
+        {% for item in site.data.links %}
+        <a class="col-4 border p-2" style="text-decoration:none;" href="{{ item.url }}" target="_blank"
+            onMouseOver="this.classList.add('shadow');" onMouseOut="this.classList.remove('shadow')">
 
-
-{% for item in site.data.links %}
-<div class="card" style="width: 18rem;">
-    <img src="{{ item.icon_url }}" class="card-img-top" alt="{{ item.title }}" style="width: 128px;height: 128;margin: auto;">
-    <div class="card-body" style="text-align: center;">
-        <a href="{{ item.url }}" target="_blank">
-            <h5 class="card-title">{{ item.title }}</h5>
+            <div>
+                <img class="float-start m-2" src="{{ item.icon_url }}" alt="{{ item.title }}" width="48px"
+                    height="48px">
+                <h4>{{ item.title }}</h4>
+                <h6 class="card-subtitle mb-2 text-muted">{{ item.sub_title  }}</h6>
+            </div>
         </a>
-        <p class="card-text">{{ item.sub_title }}</p>
+        {% endfor %}
     </div>
 </div>
-{% endfor %}
+
 <div id="gitalk-container"></div>
 
 <script>

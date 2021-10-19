@@ -6,15 +6,21 @@ title: 站点收藏
 <h1>站点收藏</h1>
 <hr>
 {% for item in site.data.goodsites %}
-<div class="card" style="width: 18rem;margin: 24px">
-    <img src="{{ item.icon_url }}" class="card-img-top" alt="{{ item.name }}"
-        style="width: 128px;height: 128;margin: auto;margin-top: 24px;">
-    <div class="card-body" style="text-align: center;">
-        <a href="{{ item.url }}" target="_blank">
-            <h5 class="card-title">{{ item.name }}</h5>
+<h2>{{ item.title }}</h2>
+<div class="container">
+    <div class="row justify-content-start">
+        {% for item in item.items %}
+        <a class="col-4 border" style="text-decoration:none;" href="{{ item.url }}" target="_blank"
+            onMouseOver="this.classList.add('shadow');" onMouseOut="this.classList.remove('shadow')">
+
+            <div>
+                <img class="float-start m-2" src="{{ item.icon_url }}" alt="{{ item.name }}" width="48px" height="48px">
+                <h4>{{ item.name }}</h4>
+                <h6 class="card-subtitle mb-2 text-muted">{{ item.desc }}</h6>
+            </div>
         </a>
+        {% endfor %}
     </div>
 </div>
+<hr>
 {% endfor %}
-
-
