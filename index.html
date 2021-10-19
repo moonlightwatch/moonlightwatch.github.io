@@ -2,20 +2,33 @@
 layout: index
 ---
 
-<ul class="list-group list-group-flush">
+<div class="list-group list-group-flush">
   {% for post in paginator.posts %}
-  <li class="list-group-item">
-    <a href="{{ post.url }}"><p class="font-weight-bold">{{ post.title }}</p></a>
-    <span class="badge badge-primary">{{ post.category }}</span> |
-    <span>📅 {{ post.date | date: "%Y-%m-%d" }}</span> |
-    {% for tag in post.tags %}
-    <span class="badge badge-light">{{ tag }}</span>
-    {% endfor %}
-    <p class="font-weight-light text-muted font-italic">{{ post.excerpt }}</p>
-    
-  </li>
+  <div class="list-group-item" onMouseOver="this.classList.add('shadow');"
+    onMouseOut="this.classList.remove('shadow')">
+    <a style="text-decoration:none;" href="{{ post.url }}">
+      <p class="font-weight-bold fs-4">{{ post.title }}</p>
+      <p class="font-weight-light text-muted font-italic">{{ post.excerpt }}</p>
+    </a>
+    <p>
+      <span class="badge bg-primary">{{ post.category }}</span> |
+      <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+          <path fill-rule="evenodd"
+            d="M4.75 0a.75.75 0 01.75.75V2h5V.75a.75.75 0 011.5 0V2h1.25c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0113.25 16H2.75A1.75 1.75 0 011 14.25V3.75C1 2.784 1.784 2 2.75 2H4V.75A.75.75 0 014.75 0zm0 3.5h8.5a.25.25 0 01.25.25V6h-11V3.75a.25.25 0 01.25-.25h2zm-2.25 4v6.75c0 .138.112.25.25.25h10.5a.25.25 0 00.25-.25V7.5h-11z">
+          </path>
+        </svg> {{ post.date | date: "%Y-%m-%d" }}</span> |
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+        <path fill-rule="evenodd"
+          d="M2.5 7.775V2.75a.25.25 0 01.25-.25h5.025a.25.25 0 01.177.073l6.25 6.25a.25.25 0 010 .354l-5.025 5.025a.25.25 0 01-.354 0l-6.25-6.25a.25.25 0 01-.073-.177zm-1.5 0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 010 2.474l-5.026 5.026a1.75 1.75 0 01-2.474 0l-6.25-6.25A1.75 1.75 0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z">
+        </path>
+      </svg>
+      {% for tag in post.tags %}
+      <span class="badge bg-secondary">{{ tag }}</span>
+      {% endfor %}
+    </p>
+  </div>
   {% endfor %}
-</ul>
+</div>
 
 <nav class="mt-5 mb-5">
   <ul class="pagination">
@@ -30,7 +43,6 @@ layout: index
     <li class="page-item active" aria-current="page">
       <span class="page-link">
         {{ page }}
-        <span class="sr-only">(current)</span>
       </span>
     </li>
     {% elsif page == 1 %}
@@ -50,4 +62,3 @@ layout: index
     {% endif %}
   </ul>
 </nav>
-

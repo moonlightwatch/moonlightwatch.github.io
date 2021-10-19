@@ -1,21 +1,22 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light ml-5 mr-5">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">{{ site.title }}</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
                 {% for item in site.data.navbar %}
                 <li class="nav-item">
                     <a class="nav-link" href="{{ item.link }}">{{ item.name }}</a>
                 </li>
                 {% endfor %}
             </ul>
-            <span class="navbar-text" id="words-text"></span>
         </div>
+        <span class="navbar-text" id="words-text"></span>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
     </div>
 </nav>
 <div id="words" hidden>
@@ -26,8 +27,8 @@
 <script>
     var words = new Array();
     let wordItems = document.getElementById("words").children;
-    var words_index=0;
-    
+    var words_index = 0;
+
     function viewopacity() {
         let element = document.getElementById("words-text");
         element.style.opacity = parseFloat(element.style.opacity) + 0.02;

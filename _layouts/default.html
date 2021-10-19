@@ -31,14 +31,15 @@
 <body>
     {% include nav.html %}
 
-    <div class="container-fluid">
-        <div class="row flex-lg-nowrap">
-            <div class="navbar-expand-lg">
-                <div class="collapse navbar-collapse p-5" style="position: sticky;">{% include leftbar.html %}</div>
-            </div>
-            <div class="w-100 m-lg-5 p-5 shadow-lg" style="order: 1; max-width: 1024px;" role="main">
+    <div class="container">
+        <div class="row justify-content-start">
+          <div class="col-lg-3 col-sm-12">
+              {% include leftbar.html %}
+          </div>
+          <div class="col-lg-9 col-12">
                 {{ content }}
-            </div>
+          </div>
+         
         </div>
     </div>
     
