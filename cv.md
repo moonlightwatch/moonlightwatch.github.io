@@ -51,8 +51,8 @@ title: 简历
     - 熟悉开发流程，以及channel和反射等基本的语言特性
     - 熟悉 Gin 和 gorm 等常用组件的使用
     - 造的轮子：
-        1. [sysres-查看和监视系统资源的命令行工具](https://github.com/moonlightwatch/sysres)
-        2. [porncrawler-基于关键词匹配的网站爬虫（效果拔群）](https://github.com/moonlightwatch/porncrawler)
+        1. [sysres-查看和监视系统资源的命令行工具](https://github.com/moonlightwatch/sysres)(https://github.com/moonlightwatch/sysres)
+        2. [porncrawler-基于关键词匹配的网站爬虫（效果拔群）](https://github.com/moonlightwatch/porncrawler)(https://github.com/moonlightwatch/porncrawler)
 - Python （工作常用）
     - 熟悉开发流程
     - 熟悉 django和flask等常用Web框架
@@ -61,26 +61,26 @@ title: 简历
     - 熟悉基本的语法和特性，会用BootStrap，但是不熟悉前端开发框架
     - 熟悉基本语法，能迅速实现需求（又不是不能用.jpg）
     - 造的轮子：
-        1. [鄙人博客-基于Bootstrap的Jeklly主题](https://blog.moonlightwatch.com/about.html)
-        2. [HTML练习项目](https://github.com/moonlightwatch/JS-Show)
-            - [2048游戏](https://moonlightwatch.github.io/JS-Show/2048/)
-            - [打砖块游戏](https://moonlightwatch.github.io/JS-Show/Krakout/krakout.html)
-            - [数字时钟（炫酷）](https://moonlightwatch.github.io/JS-Show/Timer_In_JS/)
-            - [日历（朴素）](https://moonlightwatch.github.io/JS-Show/mCalendar/)
+        1. [鄙人博客-基于Bootstrap的Jeklly主题](https://blog.moonlightwatch.com/about.html)(https://blog.moonlightwatch.com/about.html)
+        2. [HTML练习项目](https://github.com/moonlightwatch/JS-Show)(https://github.com/moonlightwatch/JS-Show)
+            - [2048游戏](https://moonlightwatch.github.io/JS-Show/2048/)(https://moonlightwatch.github.io/JS-Show/2048/)
+            - [打砖块游戏](https://moonlightwatch.github.io/JS-Show/Krakout/krakout.html)(https://moonlightwatch.github.io/JS-Show/Krakout/krakout.html)
+            - [数字时钟（炫酷）](https://moonlightwatch.github.io/JS-Show/Timer_In_JS/)(https://moonlightwatch.github.io/JS-Show/Timer_In_JS/)
+            - [日历（朴素）](https://moonlightwatch.github.io/JS-Show/mCalendar/)(https://moonlightwatch.github.io/JS-Show/mCalendar/)
 - C#.Net
     - 熟悉基本语法，熟练使用VisualStudio开发环境
     - 熟练开发WinForm类型的应用程序
     - 熟悉事件、委托、异步、反射等基本特性
     - 熟悉动态链接库和桌面控件的开发
     - 造的轮子：
-        1. [LiveClient-一个用于测试技术栈的直播客户端](https://github.com/moonlightwatch/LiveClient)
-        2. [BilibiliGirls-基于WinForm的桌面看板娘（还挺好用）](https://github.com/moonlightwatch/BilibiliGirls)
+        1. [LiveClient-一个用于测试技术栈的直播客户端](https://github.com/moonlightwatch/LiveClient)(https://github.com/moonlightwatch/LiveClient)
+        2. [BilibiliGirls-基于WinForm的桌面看板娘（还挺好用）](https://github.com/moonlightwatch/BilibiliGirls)(https://github.com/moonlightwatch/BilibiliGirls)
 - C/C++
     - 熟悉基本语法和gcc的使用，但不熟悉C++的各种语言特性
     - 熟悉并理解指针相关操作
     - 硬要开发，也可以迅速上手
     - 造的轮子：
-        1. [图片隐写工具](https://github.com/moonlightwatch/gadgets/tree/master/Bitmap_Encryption)
+        1. [图片隐写工具](https://github.com/moonlightwatch/gadgets/tree/master/Bitmap_Encryption)(https://github.com/moonlightwatch/gadgets/tree/master/Bitmap_Encryption)
 
 - Lua
     - 了解基本语法，能快速实现需求
@@ -105,4 +105,4 @@ title: 简历
 ## 联系我
 
 - Email：moonlightwatch@hotmail.com
-- [博客留言板](https://blog.moonlightwatch.com/messageboard.html)（我能收到邮件通知）
+- [博客留言板](https://blog.moonlightwatch.com/messageboard.html)(https://blog.moonlightwatch.com/messageboard.html)（我能收到邮件通知）
