@@ -220,6 +220,33 @@ func (m *Manager) getIPWhiteListServiceHandler(ctx context.Context, config *dyna
 ```
 其中 `m.BuildHTTP(config.Service)` 这里是调用 BuildHTTP 方法，通过配置中传入的其他 Service 名称，创建其 Handler，以供我们的Service 调用。
 
+定义好 `getIPWhiteListServiceHandler` 后，需要在 BuildHTTP 方法中增加配置的判断和调用就行：
+
+```go
+// BuildHTTP Creates a http.Handler for a service configuration.
+func (m *Manager) BuildHTTP(rootCtx context.Context, serviceName string) (http.Handler, error) {
+	......(省略了其他代码)
+
+	var lb http.Handler
+
+	switch {
+	......(省略了其他配置)
+	case conf.WhiteList != nil:
+		var err error
+		lb, err = m.getIPWhiteListServiceHandler(ctx, conf.WhiteList)
+		if err != nil {
+			conf.AddError(err, true)
+			return nil, err
+		}
+	default:
+		sErr := fmt.Errorf("the service %q does not have any type defined", serviceName)
+		conf.AddError(sErr, true)
+		return nil, sErr
+	}
+
+	return lb, nil
+}
+```
 
 
 到此我们的自定义 Service 已经开发完成。可以根据需求，对代码进行测试和修改
