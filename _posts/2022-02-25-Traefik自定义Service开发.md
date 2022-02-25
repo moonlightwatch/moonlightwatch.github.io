@@ -218,7 +218,7 @@ func (m *Manager) getIPWhiteListServiceHandler(ctx context.Context, config *dyna
 	return handler, nil
 }
 ```
-其中 \`m.BuildHTTP(config.Service)\` 这里是调用 BuildHTTP 方法，通过配置中传入的其他 Service 名称，创建其 Handler，以供我们的Service 调用。
+其中 `m.BuildHTTP(config.Service)` 这里是调用 BuildHTTP 方法，通过配置中传入的其他 Service 名称，创建其 Handler，以供我们的Service 调用。
 
 
 
