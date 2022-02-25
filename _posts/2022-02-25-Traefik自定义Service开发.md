@@ -71,7 +71,7 @@ type Service struct {
 
 举例，定义 白名单Service：
 
-在 http\_config.go 中新增：
+在 http_config.go 中新增：
 
 ```go
 type WhiteList struct {
@@ -119,7 +119,7 @@ http:
 
 欲新增 Service 则需要在 /pkg/server/service/ 下新建一个文件夹，并在其中新建文件。还是以 白名单 为例，结构如下（省略的其他无关部分）：
 
-```Plain Text
+```
 ├── pkg
 │   └── server
 │       └── service
