@@ -1,0 +1,32 @@
+---
+layout: tool
+title: URL编码/解码
+---
+
+
+<h2>URL编码/解码</h2>
+
+<hr>
+
+
+
+<div class="input-group">
+    <span class="input-group-text" id="decoded-span">URL（未编码数据）</span>
+    <input id="decoded" type="text" class="form-control" aria-describedby="decoded-span">
+</div>
+
+<p></p>
+
+<div class="input-group">
+    <span class="input-group-text" id="encoded-span">Encoded（已编码数据）</span>
+    <input id="encoded" type="text" class="form-control" aria-describedby="encoded-span" disabled>
+</div>
+
+<script>
+    document.getElementById("decoded").onchange = function (e) {
+        document.getElementById("encoded").value = encodeURI(document.getElementById("decoded").value);
+    }
+    document.getElementById("encoded").onchange = function (e) {
+        document.getElementById("decoded").value = decodeURI(document.getElementById("encoded").value);
+    }
+</script>
