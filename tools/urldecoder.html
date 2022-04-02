@@ -19,14 +19,14 @@ title: URL编码/解码
 
 <div class="input-group">
     <span class="input-group-text" id="encoded-span">Encoded（已编码数据）</span>
-    <input id="encoded" type="text" class="form-control" aria-describedby="encoded-span" disabled>
+    <input id="encoded" type="text" class="form-control" aria-describedby="encoded-span">
 </div>
 
 <script>
-    document.getElementById("decoded").onchange = function (e) {
+    document.getElementById("decoded").onkeyup = function (e) {
         document.getElementById("encoded").value = encodeURI(document.getElementById("decoded").value);
     }
-    document.getElementById("encoded").onchange = function (e) {
+    document.getElementById("encoded").onkeyup = function (e) {
         document.getElementById("decoded").value = decodeURI(document.getElementById("encoded").value);
     }
 </script>
