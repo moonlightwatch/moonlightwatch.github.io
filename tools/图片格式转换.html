@@ -1,0 +1,78 @@
+---
+layout: tool
+title: 图片格式转换
+---
+
+<h2>图片格式转换</h2>
+
+<hr>
+
+
+<div class="input-group">
+    <span class="input-group-text" id="img-selector-span">选择图片</span>
+    <input id="img-selector" type="file" accept="image/*" class="form-control" aria-describedby="img-selector-span">
+</div>
+
+<div class="input-group">
+    <span class="input-group-text">尺寸设置：</span>
+    <span>Width:</span><input id="size-width" type="number" class="form-control" value="400">
+    <span>Height:</span><input id="size-height" type="number" class="form-control" value="400">
+</div>
+
+<div class="input-group">
+    <span class="input-group-text" id="input10-span">转换为：</span>
+    <select id="type-select" class="form-select" aria-label="选择输出类型" aria-describedby="input10-span">
+        <option value="ico" selected>.ico</option>
+        <option value="gif">.gif</option>
+        <option value="bmp">.bmp</option>
+        <option value="webp">.webp</option>
+        <option value="png">.png</option>
+        <option value="jpeg">.jpg</option>
+    </select>
+    <button id="save-btn">保存</button>
+</div>
+
+<div class="input-group">
+    <img id="img-show">
+</div>
+
+
+<script>
+    document.getElementById("img-selector").addEventListener('change', imageSelected);
+    var reader = new FileReader();
+    let image = new Image();
+    reader.onload = function (e) {
+        document.getElementById("img-show").src = e.target.result;
+    }
+    image.onload = function (e) {
+        document.getElementById("size-width").value = image.width;
+        document.getElementById("size-height").value = image.height;
+    }
+    var selectFileName = "";
+
+    function imageSelected(e) {
+        if (e.target.files.length > 0) {
+            reader.readAsDataURL(e.target.files[0]);
+            selectFileName = e.target.files[0].name;
+        }
+    }
+
+    document.getElementById("save-btn").onclick = function (e) {
+        let imgType = document.getElementById("type-select").value;
+        let MIME_TYPE = "image/" + imgType;
+
+
+        let cvs = document.createElement("CANVAS");
+        cvs.width = document.getElementById("size-width").value;
+        cvs.height = document.getElementById("size-height").value;
+        ctx = cvs.getContext('2d');
+        ctx.drawImage(document.getElementById("img-show"), 0, 0);
+        var url = cvs.toDataURL(MIME_TYPE)
+
+        // var url = document.getElementById("img-show").src;
+        var a = document.createElement('a');
+        a.download = selectFileName.split(".")[0] + "." + imgType;
+        a.href = url;
+        a.click()
+    }
+</script>
